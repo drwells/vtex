@@ -1,6 +1,6 @@
 * Overview
   VTeX is a lightweight LaTeX mode for emacs. Its main goals are minimial
-  syntax highlighting and python-like indentation
+  syntax highlighting and python-like indentation.
 * Philosophy
   The main feature of VTeX is automatic indentation; something AUCTeX does not
   do the way I like. I favor the style
@@ -16,8 +16,8 @@
   style will probably break things; the indentation engine and fontification
   are based on regular expressions instead of something more durable.
 * Other Features
-  + The single backtick src_LaTeX{`} is extended automatically into LaTex double
-    quotes, or src_LaTeX{''|``}.
+  + The single backtick =`= is extended automatically into LaTeX
+    double quotes, or =``''.=
   + Linebreaks (=\\=) are automatically aligned at the 79th column (starting
     from zero).
   + =M-q= is rebound to properly fill paragraphs. It seems smarter than the
