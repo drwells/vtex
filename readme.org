@@ -1,0 +1,26 @@
+* Overview
+  VTeX is a lightweight LaTeX mode for emacs. Its main goals are minimial
+  syntax highlighting and python-like indentation
+* Philosophy
+  The main feature of VTeX is automatic indentation; something AUCTeX does not
+  do the way I like. I favor the style
+#+BEGIN_SRC LaTeX
+    \section{My New Section}
+        \begin{align*}
+            &= \remainder{j} \remainder{k} \sigma_j^2
+               \Langles{\phi_j, \phi_k}_s                                     \\
+            &= \remainder{j} \sigma_j^2 \Norm{\phi_j}_s.
+        \end{align*}
+#+END_SRC LaTeX
+  over the default flat structure. VTeX is very crude in that not obeying this
+  style will probably break things; the indentation engine and fontification
+  are based on regular expressions instead of something more durable.
+* Other Features
+  + The single backtick =`= is extended automatically into LaTex double quotes,
+    or =``|''=.
+  + Linebreaks (=\\=) are automatically aligned at the 79th column (starting
+    from zero).
+  + =M-q= is rebound to properly fill paragraphs. It seems smarter than the
+    AUCTeX version.
+  + The color theme looks nice with Comida. It may look less appealing with
+    other themes.
