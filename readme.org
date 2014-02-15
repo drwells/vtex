@@ -16,8 +16,8 @@
   style will probably break things; the indentation engine and fontification
   are based on regular expressions instead of something more durable.
 * Other Features
-  + The single backtick =`= is extended automatically into LaTex double quotes,
-    or =``|''=.
+  + The single backtick src_LaTeX{`} is extended automatically into LaTex double
+    quotes, or src_LaTeX{''|``}.
   + Linebreaks (=\\=) are automatically aligned at the 79th column (starting
     from zero).
   + =M-q= is rebound to properly fill paragraphs. It seems smarter than the
