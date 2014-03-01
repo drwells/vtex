@@ -70,7 +70,7 @@
   (vtex--font-lock-opt
    '("\\label" "\\eqref" "\\cite" "\\newcommand" "\\input" "\\include"
      "\\RequirePackage" "\\usepackage" "\\documentclass" "\\setcounter")
-   font-lock-function-name-face)
+   font-lock-function-name-face 'word-right)
   "Miscellaneous keywords.")
 
 (defconst vtex-font-lock-spacing-commands
