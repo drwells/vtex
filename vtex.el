@@ -55,7 +55,7 @@
   "Math delimiters.")
 
 (defconst vtex-font-lock-catch-backslash
-  (list '("\\(\\\\\\w+\\)" . font-lock-builtin-face))
+  (list '("\\\\\\w+\\>" . font-lock-builtin-face))
   "catch additional backslashed terms.")
 
 (defconst vtex-font-lock-catch-backslash-special
