@@ -36,7 +36,7 @@
     (if (eq paren 'word-right)
         (setq regex (concat (regexp-opt string-list) "\\>"))
       (setq regex (regexp-opt string-list paren)))
-    (list `(,regex . ,font-lock-input))))
+    (list (cons regex font-lock-input))))
 
 (defconst vtex-font-lock-sectioning
   (list
