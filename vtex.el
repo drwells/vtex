@@ -40,13 +40,14 @@
 
 (defconst vtex-font-lock-sectioning
   (list
+   '("paragraph{\\(.*\\)}$" 1 font-lock-builtin-face)
    '("section{\\(.*\\)}$" 1 font-lock-builtin-face)
    '("begin{\\([^}]*\\)}" 1 font-lock-builtin-face)
    '("end{\\([^}]*\\)}" 1 font-lock-builtin-face)
    (car (vtex--font-lock-opt
-    '("\\section" "\\subsection" "\\subsubsection" "\\begin" "\\end")
-    font-lock-keyword-face 'word-right))
-   )
+    '("\\paragraph" "\\section" "\\subsection" "\\subsubsection" "\\begin"
+      "\\end")
+    font-lock-keyword-face 'word-right)))
   "Additional keywords to highlight in VTEX mode.")
 
 (defconst vtex-font-lock-math-delimiters
@@ -165,6 +166,11 @@
           (message "using \\subsubsection to indent")
           (indent-line-to 8)
           (setq vtex-next-indent 12)))
+       ((looking-at "^ *\\\\paragraph")
+        (progn
+          (message "using \\paragraph to indent")
+          (indent-line-to 12)
+          (setq vtex-next-indent 16)))
        ;; check for "\item".
        ((looking-at "^ *\\\\item ")
         (progn
