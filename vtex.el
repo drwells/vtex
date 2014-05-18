@@ -271,14 +271,20 @@ paragraph terminator, then return nil."
       (cond
        ((looking-at vtex-block-terminator-regexp) nil)
        ((eq direction 'up)
-        (progn
-          (search-backward-regexp vtex-block-terminator-regexp)
-          (forward-line 1)
-          (line-beginning-position)))
+        ;; if the search fails then the block must start at (point-min). The
+        ;; same concept holds for the forwards search (block must end at
+        ;; (point-max)).
+        (if (eq (search-backward-regexp vtex-block-terminator-regexp nil t) nil)
+            (point-min)
+          (progn
+            (forward-line 1)
+            (line-beginning-position))))
        ((eq direction 'down)
-        (progn (search-forward-regexp vtex-block-terminator-regexp)
-               (forward-line -1)
-               (line-end-position)))
+        (if (eq (search-forward-regexp vtex-block-terminator-regexp nil t) nil)
+            (point-max)
+          (progn
+            (forward-line -1)
+            (line-end-position))))
        (t (error (concat "unrecognized direction;"
                          "should be `up' or `down'")))))))
 
