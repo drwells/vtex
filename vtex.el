@@ -325,6 +325,9 @@ paragraph terminator, then return nil."
   "Major mode for editing LaTeX files."
   :syntax-table vtex-syntax-table
   (progn
+    ;; turn off french spacing.
+    (make-local-variable 'sentence-end-double-space)
+    (setq sentence-end-double-space nil)
     (setq font-lock-defaults vtex-font-lock-keywords)
     (setq comment-start "%")
     (setq comment-end "")
