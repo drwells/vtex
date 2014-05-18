@@ -1,5 +1,5 @@
 * Overview
-  VTeX is a lightweight LaTeX mode for emacs. Its main goals are minimial
+  VTeX is a lightweight LaTeX mode for emacs. Its main goals are minimal
   syntax highlighting and python-like indentation.
   *VTeX mode is very experimental! Be warned that this mode may eat your dog,
   crash your computer, and do other unusual things.*
